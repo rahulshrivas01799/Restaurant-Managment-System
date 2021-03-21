@@ -26,10 +26,10 @@ public class Restaurant {
 	private JTextField textField;
 	private JTextField textField_1;
 	private JTextField textField_2;
-	private JTextField textField_3;
-	private JTextField textField_4;
 	private JTextField textField_5;
 	private JTextField textField_6;
+	private JTextField textField_7;
+	private JTextField textField_3;
 
 	/**
 	 * Launch the application.
@@ -57,6 +57,7 @@ public class Restaurant {
 	/**
 	 * Initialize the contents of the frame.
 	 */
+	@SuppressWarnings({ "unchecked", "rawtypes" })
 	private void initialize() {
 		frame = new JFrame();
 		frame.setBounds(0, 0, 1368, 689);
@@ -148,30 +149,31 @@ public class Restaurant {
 		
 		JLabel lblNewLabel_1_3_4 = new JLabel("Qty");
 		lblNewLabel_1_3_4.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblNewLabel_1_3_4.setBounds(184, 155, 105, 21);
+		lblNewLabel_1_3_4.setBounds(178, 137, 105, 21);
 		panel_1_1.add(lblNewLabel_1_3_4);
-		
-		JLabel lblNewLabel_2_5 = new JLabel("");
-		lblNewLabel_2_5.setBorder(new LineBorder(Color.DARK_GRAY, 2));
-		lblNewLabel_2_5.setBounds(167, 176, 122, 19);
-		panel_1_1.add(lblNewLabel_2_5);
 		
 		JCheckBox chckbxNewCheckBox = new JCheckBox("Home Delevery");
 		chckbxNewCheckBox.setBounds(18, 209, 107, 21);
 		panel_1_1.add(chckbxNewCheckBox);
 		
 		JCheckBox chckbxTax = new JCheckBox("TAX");
-		chckbxTax.setBounds(197, 209, 107, 21);
+		chckbxTax.setSelected(true);
+		chckbxTax.setBounds(207, 209, 107, 21);
 		panel_1_1.add(chckbxTax);
 		
-		JComboBox comboBox = new JComboBox();
-		comboBox.setModel(new DefaultComboBoxModel(new String[] {"Select a Item", "Cock", "Pepsi", "mango", "orange", "pine", "water", "mink"}));
-		comboBox.setBounds(20, 174, 105, 21);
-		panel_1_1.add(comboBox);
+		JComboBox Selectaitem = new JComboBox();
+		Selectaitem.setModel(new DefaultComboBoxModel(new String[] {"Select a Item", "Tea", "Ice Tea", "Coffee", "Ice Coffee", "Cola","Coke", "Orange", "Apple Juice"}));
+		Selectaitem.setBounds(20, 167, 105, 21);
+		panel_1_1.add(Selectaitem);
 		
 		JSeparator separator = new JSeparator();
 		separator.setBounds(20, 136, 300, 4);
 		panel_1_1.add(separator);
+		
+		textField_7 = new JTextField();
+		textField_7.setColumns(10);
+		textField_7.setBounds(168, 168, 163, 19);
+		panel_1_1.add(textField_7);
 		
 		JPanel panel_1_1_1 = new JPanel();
 		panel_1_1_1.setBorder(new LineBorder(Color.DARK_GRAY, 10));
@@ -189,7 +191,7 @@ public class Restaurant {
 		lblNewLabel_1_1_1.setBounds(29, 81, 105, 21);
 		panel_1_1_1.add(lblNewLabel_1_1_1);
 		
-		JLabel lblNewLabel_1_2_1 = new JLabel("cost of delevry ");
+		JLabel lblNewLabel_1_2_1 = new JLabel("cost of delivery ");
 		lblNewLabel_1_2_1.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		lblNewLabel_1_2_1.setBounds(29, 115, 105, 21);
 		panel_1_1_1.add(lblNewLabel_1_2_1);
@@ -287,104 +289,17 @@ public class Restaurant {
 		frame.getContentPane().add(panel_1_2);
 		panel_1_2.setLayout(null);
 		
-		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
-		tabbedPane.setBounds(35, 57, 269, 353);
-		panel_1_2.add(tabbedPane);
-		
-		JPanel panel_3 = new JPanel();
-		tabbedPane.addTab("Recipt", null, panel_3, null);
-		panel_3.setLayout(null);
-		
-		textField_4 = new JTextField();
-		textField_4.setBounds(48, 34, 181, 269);
-		panel_3.add(textField_4);
-		textField_4.setColumns(10);
-		
-		JPanel panel_2 = new JPanel();
-		tabbedPane.addTab("Calculator", null, panel_2, null);
-		panel_2.setLayout(null);
-		
-		JButton btn7 = new JButton("7");
-		btn7.setBounds(20, 67, 39, 34);
-		panel_2.add(btn7);
+		JLabel lblNewLabel_3 = new JLabel("Recipt");
+		lblNewLabel_3.setBounds(122, 20, 46, 38);
+		panel_1_2.add(lblNewLabel_3);
 		
 		textField_3 = new JTextField();
+		textField_3.setBounds(26, 68, 263, 323);
+		panel_1_2.add(textField_3);
 		textField_3.setColumns(10);
-		textField_3.setBounds(10, 10, 197, 39);
-		panel_2.add(textField_3);
 		
-		JButton btn8 = new JButton("8");
-		btn8.setBounds(69, 67, 39, 21);
-		panel_2.add(btn8);
 		
-		JButton btn9 = new JButton("9");
-		btn9.setBounds(118, 67, 39, 21);
-		panel_2.add(btn9);
 		
-		JButton btnplus = new JButton("+");
-		btnplus.setBackground(Color.BLACK);
-		btnplus.setBounds(140, 231, 50, 21);
-		panel_2.add(btnplus);
-		
-		JButton btndiv = new JButton("/");
-		btndiv.setBounds(167, 104, 47, 30);
-		panel_2.add(btndiv);
-		
-		JButton btnClear = new JButton("C");
-		btnClear.setBounds(80, 226, 50, 30);
-		panel_2.add(btnClear);
-		
-		JButton btnsub = new JButton("-");
-		btnsub.setBounds(20, 226, 50, 30);
-		panel_2.add(btnsub);
-		
-		JButton btn6 = new JButton("6");
-		btn6.setBounds(118, 108, 39, 27);
-		panel_2.add(btn6);
-		
-		JButton btn5 = new JButton("5");
-		btn5.setBounds(69, 108, 39, 27);
-		panel_2.add(btn5);
-		
-		JButton btn4 = new JButton("4");
-		btn4.setBounds(20, 111, 39, 21);
-		panel_2.add(btn4);
-		
-		JButton btn1 = new JButton("1");
-		btn1.setBounds(20, 145, 39, 27);
-		panel_2.add(btn1);
-		
-		JButton btn2 = new JButton("2");
-		btn2.setBounds(69, 145, 39, 27);
-		panel_2.add(btn2);
-		
-		JButton btn3 = new JButton("3");
-		btn3.setBounds(123, 145, 45, 27);
-		panel_2.add(btn3);
-		
-		JButton btnmul = new JButton("*");
-		btnmul.setBounds(175, 144, 50, 30);
-		panel_2.add(btnmul);
-		
-		JButton btnBackSpace = new JButton("\uF0E7");
-		btnBackSpace.setBounds(167, 69, 54, 30);
-		panel_2.add(btnBackSpace);
-		
-		JButton btnequal = new JButton("=");
-		btnequal.setBounds(177, 195, 50, 21);
-		panel_2.add(btnequal);
-		
-		JButton btnPM = new JButton("+/-");
-		btnPM.setBounds(118, 195, 47, 21);
-		panel_2.add(btnPM);
-		
-		JButton btn0 = new JButton("0");
-		btn0.setBounds(58, 195, 54, 21);
-		panel_2.add(btn0);
-		
-		JButton btndot = new JButton(".");
-		btndot.setBounds(20, 195, 39, 21);
-		panel_2.add(btndot);
 		
 		JPanel panel_1_1_1_1 = new JPanel();
 		panel_1_1_1_1.setBorder(new LineBorder(Color.DARK_GRAY, 10));
@@ -416,12 +331,141 @@ public class Restaurant {
 				String ipMeal =String.format("%.2f", CheeseBurgerMeal+ BurgerMeal + Burger);
 				lblNewLabel_2_1.setText(ipMeal);
 				
+				//.......home .......//
+				
+				double iDelivery=3.63;
+				if(chckbxNewCheckBox.isSelected())
+				{
+					String pDelivery=String.format("%.2f", iDelivery);
+					lblNewLabel_2_2.setText(pDelivery);
+					
+				}else
+				{
+					lblNewLabel_2_2.setText("0");
+				}
+				
+						//.......Drinks.......textField_7    comboBox //
+				double Drinks=Double.parseDouble(textField_7.getText());
+				double Tea =1.552*Drinks;
+				double Ice_Tea = 2.2*Drinks;
+				double Coffee = 15.2*Drinks;
+				double Ice_Coffee = 51.2*Drinks;
+				double Cola = 15.2*Drinks;
+				double Coke = 1.2*Drinks;
+				double Orange = 1.2*Drinks;
+				double Apple_Juice = 1.2*Drinks;
+				
+			
+				if(Selectaitem.getSelectedItem().equals("Tea"));
+				{
+					String cTea=String.format("%.2f",Tea);
+					lblNewLabel_2.setText(cTea);
+					}
+				
+				if(Selectaitem.getSelectedItem().equals("Ice Tea"));
+				{
+					String cIce_Tea=String.format("%.2f", Ice_Tea);
+					lblNewLabel_2.setText(cIce_Tea);
+					}
+				
+				if(Selectaitem.getSelectedItem().equals("Coke"));
+				{
+					String cCoke=String.format("%.2f", Coke);
+					lblNewLabel_2.setText(cCoke);
+					}
+				
+				if(Selectaitem.getSelectedItem().equals("Cola"));
+				{
+					String cCola=String.format("%.2f",Cola);
+					lblNewLabel_2.setText(cCola);
+					}
+				
+				if(Selectaitem.getSelectedItem().equals("Orange"));
+				{
+					String cOrange=String.format("%.2f", Orange);
+					lblNewLabel_2.setText(cOrange);
+					}
+				
+				if(Selectaitem.getSelectedItem().equals("Coffee"));
+				{
+					String cCoffee=String.format("%.2f", Coffee);
+					lblNewLabel_2.setText(cCoffee);
+					}
+				
+				if(Selectaitem.getSelectedItem().equals("Ice Coffee"));
+				{
+					String cIce_Coffee=String.format("%.2f", Ice_Coffee);
+					lblNewLabel_2.setText(cIce_Coffee);
+					}
+				
+				if(Selectaitem.getSelectedItem().equals("Apple Juice"));
+				{
+					String cApple_Juice=String.format("%.2f", Apple_Juice);
+					lblNewLabel_2.setText(cApple_Juice);
+					}
+				
+				
+				if(Selectaitem.getSelectedItem().equals("Select a Item"));
+				{
+					
+					lblNewLabel_2.setText("0");
+					}
+				
+				//.........tax............//
+				
+				double cTotal1=Double.parseDouble(lblNewLabel_2.getText());
+				double cTotal2=Double.parseDouble(lblNewLabel_2_1.getText());
+				double cTotal3=Double.parseDouble(lblNewLabel_2_2.getText());
+
+				double Alltotal=(cTotal1+cTotal2+cTotal3)/100;
+				if(chckbxTax.isSelected())
+				{
+					String iTotal= String.format("%.2f", Alltotal);
+					lblNewLabel_2_4.setText(iTotal);
+					
+				}
+				
+				//...........total............?
+				
+				
+				double cTotal4=Double.parseDouble(lblNewLabel_2_4.getText());
+				
+				double subTotal=(cTotal1+cTotal2+cTotal3);
+				String isubTotal= String.format("$ %.2f", subTotal);
+				lblNewLabel_2_4_1.setText(isubTotal);
+				
+				
+				double allTotal=(cTotal1+cTotal2+cTotal3+cTotal4);
+				String iTotal= String.format("$ %.2f", allTotal);
+				lblNewLabel_2_4_2.setText(iTotal);
+				
+				String iTaxTotal= String.format("$ %.2f", cTotal4);
+				lblNewLabel_2_4.setText(iTaxTotal);
+				
+
+
+				
 			}
 		});
 		btnTotal.setBounds(124, 53, 85, 21);
 		panel_1_1_1_1.add(btnTotal);
 		
 		JButton btnRecipt = new JButton("Recipt");
+		btnRecipt.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				double Qty1=Double.parseDouble(textField.getText());
+				double Qty2=Double.parseDouble(textField_1.getText());
+				double Qty3=Double.parseDouble(textField_2.getText());
+				
+				textField_3.append("\t\nRestaurant Managment System:\n\n" + "Chicken Burger:\t\t"
+				+Qty1 + "\n Chicken Burger Meal:\t\t" + Qty2 +"\n Bacon and Cheese Burger:\t\t" +Qty3 + "\n\n Thanks for Job Estimator");
+				
+
+
+				
+			}
+		});
 		btnRecipt.setBounds(287, 53, 85, 21);
 		panel_1_1_1_1.add(btnRecipt);
 		
@@ -434,11 +478,15 @@ public class Restaurant {
 				textField.setText(null);
 				textField_1.setText(null);
 				textField_2.setText(null);
-				lblNewLabel_2_5.setText(null);
+				//lblNewLabel_2_5.setText(null);
+				//chckbxNewCheckBox
+				//chckbxTax
+				//chckbxNewCheckBox
+				textField_7.setText(null);
 				
-				comboBox.setSelectedItem("Select a Item");
-				chckbxNewCheckBox.setText(null);
-				chckbxTax.setText(null);
+				Selectaitem.setSelectedItem("Select a Item");
+				//chckbxNewCheckBox.setText(null);
+				//chckbxTax.setText(null);
 				comboBox_1.setSelectedItem("Choose one");
 				textField_5.setText(null);
 				textField_6.setText(null);
@@ -460,7 +508,7 @@ public class Restaurant {
 		btnExit.setBounds(672, 53, 85, 21);
 		panel_1_1_1_1.add(btnExit);
 		
-		JLabel lblNewLabel = new JLabel("              Loan managment System");
+		JLabel lblNewLabel = new JLabel("              Restaurants managment System");
 		lblNewLabel.setFont(new Font("Arial Black", Font.BOLD, 46));
 		lblNewLabel.setBounds(35, 35, 1078, 51);
 		frame.getContentPane().add(lblNewLabel);
